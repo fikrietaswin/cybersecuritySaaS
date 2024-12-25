@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 224 71% 45%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-secondary/30 backdrop-blur-lg border border-white/10 rounded-lg;
+  }
+  
+  .threat-card {
+    @apply glass-panel p-4 transition-all duration-300 hover:bg-secondary/40;
+  }
+  
+  .status-indicator {
+    @apply w-2 h-2 rounded-full animate-pulse;
+  }
+}
